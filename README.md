@@ -9,7 +9,7 @@ module "terraform-backend-s3" {
     aws_region      = "${var.aws_region}"
 
     storage_bucket  = "com.example.test.terraform.state.storage"
-    storage_name    = "example.com [test] - Terraform State Store"
+    storage_name    = "test.example.com - Terraform State Store"
     storage_env     = "test"
     db_table_name   = "com.example.test.terraform.state.table"
 }
