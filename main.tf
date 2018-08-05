@@ -5,11 +5,11 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "backend_storage" {
-    bucket = "${var.backend_storage_bucket}"
+    bucket = "${var.storage_bucket}"
 
     tags {
-        Name        = "${var.backend_storage_name}"
-        Environment = "${var.backend_storage_env}"
+        Name        = "${var.storage_name}"
+        Environment = "${var.storage_env}"
     }
 
     versioning {
@@ -18,7 +18,7 @@ resource "aws_s3_bucket" "backend_storage" {
 }
 
 resource "aws_dynamodb_table" "backend_db_table" {
-    name           = "${var.backend_db_table_name}"
+    name           = "${var.db_table_name}"
     read_capacity  = 5
     write_capacity = 5
     hash_key       = "LockID"
